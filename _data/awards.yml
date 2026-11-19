@@ -1,7 +1,7 @@
 featured:
   title: "Huawei ICT Competition 2023–2024, Cloud Track"
   org: "Huawei Technologies"
-  summary: "Competed for Nigeria in a team of three and led our team's AI work. The competition drew 170,000+ students from 2,000+ institutions worldwide."
+  summary: "Competed for Nigeria in a team of three and led our team's AI work. Our team won one of the three Grand Prizes in the Cloud Track. The competition drew 170,000+ students from 2,000+ institutions worldwide."
   steps:
     - stage: "National Final"
       place: "Nigeria"
@@ -72,11 +72,19 @@ zindi:
       rank: 1
       field: 173
       code: "https://github.com/Sodiq179/Landslide-Prevention-and-Innovation-Project"
+    - challenge: "Snakes and Sequences: Senegalese Serpent Venom Sequencing Hackathon"
+      topic: "Deep Learning Indaba 2024 hackathon · venom peptide classification"
+      rank: 1
+      field: 30
     - challenge: "Trailblazers Qualification Challenge"
       topic: "Daily PM2.5 air-quality forecasting"
       rank: 1
       field: 53
       code: "https://github.com/Sodiq179/Trailblazers-Qualification-Challenge"
+    - challenge: "Amini Cocoa Contamination Challenge"
+      topic: "Mobile-friendly detection of diseases on cocoa leaves"
+      rank: 3
+      field: 209
     - challenge: "Layer.ai Air Quality Prediction Challenge"
       topic: "PM2.5 forecasting for Ugandan cities"
       rank: 4
