@@ -3,22 +3,28 @@ permalink: /
 title: "Sodiq Babawale"
 hide_title: true
 hero: true
+main_class: "home4"
+home_js: true
 description: "Sodiq Babawale is an industrial engineer and data scientist working on optimization, data analytics and machine learning for logistics and supply chains."
 redirect_from:
   - /about/
   - /about.html
 ---
 {% include base_path %}
-{% assign author = site.author %}
 
-<section class="section bio" aria-labelledby="intro-h">
-  <div class="section__head"><h2 class="section__title" id="intro-h">Introduction</h2></div>
-  <p>I work on decision-making under uncertainty: bringing machine-learning forecasts into optimization models, designing supply chain networks, and building simulation and digital-twin tools for decision support. I came to this through applied machine learning: my published work on computer vision for quality inspection and on digital twins for greenhouse monitoring made me most interested in the decisions such models inform. I graduated with First Class Honours in Industrial and Production Engineering from the <strong>University of Ibadan</strong>, ranked first of 48 in my department.</p>
-  <p>My research with the Climate Smart Decision Support Systems group at <strong>Michigan State University</strong> and at the University of Ibadan has appeared in <em>The International Journal of Advanced Manufacturing Technology</em> and <em>AgriEngineering</em>. I have also worked in AI engineering at <strong>Nethermind</strong> and in network deployment at <strong>Huawei</strong>, and I have taught applied machine learning through the Huawei ICT Academy. I am currently an independent researcher, working on optimization and learning methods for inventory control and energy-system planning.</p>
+<section class="s4 about4" id="about" aria-labelledby="about-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">01</span><h2 class="sh4__t" id="about-h">About</h2></div>
+  <div class="about4__grid">
+    <blockquote class="about4__quote reveal"><p>Most important decisions are made <em>before</em> the data arrives. I work on making them well.</p></blockquote>
+    <div class="about4__bio reveal">
+      <p>I work on decision-making under uncertainty: bringing machine-learning forecasts into optimization models, designing supply chain networks, and building simulation and digital-twin tools for decision support. I came to this through applied machine learning: my published work on computer vision for quality inspection and on digital twins for greenhouse monitoring made me most interested in the decisions such models inform. I graduated with First Class Honours in Industrial and Production Engineering from the <strong>University of Ibadan</strong>, ranked first of 48 in my department.</p>
+      <p>My research with the Climate Smart Decision Support Systems group at <strong>Michigan State University</strong> and at the University of Ibadan has appeared in <em>The International Journal of Advanced Manufacturing Technology</em> and <em>AgriEngineering</em>. I have also worked in AI engineering at <strong>Nethermind</strong> and in network deployment at <strong>Huawei</strong>, and I have taught applied machine learning through the Huawei ICT Academy. I am currently an independent researcher, working on optimization and learning methods for inventory control and energy-system planning.</p>
+    </div>
+  </div>
 </section>
 
-<section class="section" aria-labelledby="interests">
-  <div class="section__head"><h2 class="section__title" id="interests">Research interests</h2></div>
+<section class="s4" id="research" aria-labelledby="research-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">02</span><h2 class="sh4__t" id="research-h">Research interests</h2></div>
   <div class="themes">
     <article class="theme">
       <div class="theme__art">{% include ill/optimization.svg %}</div>
@@ -43,29 +49,40 @@ redirect_from:
   </div>
 </section>
 
-<section class="section" aria-labelledby="pubs">
-  <div class="section__head">
-    <h2 class="section__title" id="pubs">Selected publications</h2>
-    <a class="section__more" href="{{ base_path }}/research/">All research <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-  </div>
-  {% include pub-list.html selected=true tldr=true %}
+<section class="s4" id="work" aria-labelledby="work-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">03</span><h2 class="sh4__t" id="work-h">Selected publications</h2><a class="sh4__more mono" href="{{ base_path }}/research/">All research &rarr;</a></div>
+  <div class="reveal">{% include pub-list.html selected=true tldr=true %}</div>
+  <a class="more4 reveal" href="{{ base_path }}/research/#reproductions">
+    <span class="mono more4__k">Also on the Research page</span>
+    <span class="more4__t">Reproductions and extensions of recent operations research papers, with code, reports and figures</span>
+    <span class="more4__a" aria-hidden="true">&rarr;</span>
+  </a>
 </section>
 
-<section class="section" aria-labelledby="honours">
-  <div class="section__head">
-    <h2 class="section__title" id="honours">Selected honours</h2>
-    <a class="section__more" href="{{ base_path }}/awards/">All awards <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<section class="s4" id="journey" aria-labelledby="journey-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">04</span><h2 class="sh4__t" id="journey-h">Milestones</h2><a class="sh4__more mono" href="{{ base_path }}/awards/">All awards &rarr;</a></div>
+  <div class="tl-wrap" id="timeline">
+  <span class="tl__line" aria-hidden="true"><span class="tl__fill"></span></span>
+  <ol class="tl">
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2026 · Huawei ICT Academy</p><h3 class="tl__title">First Prize, Huawei ICT Global Teaching Competition, again</h3><p class="tl__note">Second year running.</p></div></li>
+    <li class="tl__item tl__item--paper reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">Oct 2025 · Publication</p><h3 class="tl__title">A digital twin for greenhouse sensor selection</h3><p class="tl__note"><em>AgriEngineering</em>. <a href="https://doi.org/10.3390/agriengineering7100315">Read it</a></p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">Jul 2025 · ACVSS</p><h3 class="tl__title">Funded participant, African Computer Vision Summer School</h3><p class="tl__note">AIMS Kigali, Rwanda. 25 selected from 300+.</p></div></li>
+    <li class="tl__item tl__item--paper reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2025 · Publication</p><h3 class="tl__title">Computer vision for casting inspection</h3><p class="tl__note"><em>The International Journal of Advanced Manufacturing Technology</em>. <a href="https://doi.org/10.1007/s00170-025-16665-7">Read it</a></p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2025 · Huawei ICT Academy</p><h3 class="tl__title">First Prize, Huawei ICT Global Teaching Competition</h3><p class="tl__note">For hands-on AI teaching to undergraduates.</p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">Sep 2024 · Deep Learning Indaba</p><h3 class="tl__title">1st place in the hackathon and Outstanding Poster Award</h3><p class="tl__note">Dakar, Senegal. 101 hackathon participants.</p></div></li>
+    <li class="tl__item tl__item--win reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">May 2024 · Huawei ICT Competition</p><h3 class="tl__title">Grand Prize, Global Final</h3><p class="tl__note">Cloud Track, Shenzhen. I led our team's AI work; the competition drew 170,000+ students from 2,000+ institutions.</p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2024 · Huawei ICT Competition</p><h3 class="tl__title">2nd runner-up, Regional Final</h3><p class="tl__note">Southern Africa, held in Nigeria.</p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">Dec 2023 · Huawei ICT Competition</p><h3 class="tl__title">Top 5 individually, National Final</h3><p class="tl__note">Selected to represent Nigeria in a team of three.</p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2023 · Zindi</p><h3 class="tl__title">1st of 173, Landslide Prevention and Innovation Challenge</h3><p class="tl__note">Landslide identification from Hong Kong terrain data.</p></div></li>
+    <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span><div class="tl__card"><p class="mono tl__date">2022 · Zindi</p><h3 class="tl__title">1st of 53, Trailblazers Qualification Challenge</h3><p class="tl__note">Daily PM2.5 air-quality forecasting.</p></div></li>
+  </ol>
   </div>
-  <ul class="honours">
-    <li class="honour honour--top"><span class="honour__mark" aria-hidden="true"><i class="fas fa-trophy"></i></span><div><span class="honour__title">Grand Prize, Huawei ICT Competition Global Final</span><span class="honour__note">Cloud Track, Shenzhen · led the AI work in a team of three representing Nigeria</span></div><span class="honour__year">2024</span></li>
-    <li class="honour"><span class="honour__mark" aria-hidden="true"><i class="fas fa-medal"></i></span><div><span class="honour__title">First Prize, Huawei ICT Global Teaching Competition</span><span class="honour__note">Awarded twice, for hands-on AI teaching to undergraduates</span></div><span class="honour__year">2025, 2026</span></li>
-    <li class="honour"><span class="honour__mark" aria-hidden="true"><i class="fas fa-medal"></i></span><div><span class="honour__title">1st Place, Deep Learning Indaba Hackathon, and Outstanding Poster Award</span><span class="honour__note">Deep Learning Indaba, Dakar · 101 hackathon participants</span></div><span class="honour__year">2024</span></li>
-    <li class="honour"><span class="honour__mark" aria-hidden="true"><i class="fas fa-chart-line"></i></span><div><span class="honour__title">Top 1% of 70,000+ data scientists on Zindi</span><span class="honour__note">45 medals, including 1st of 173 (Hong Kong landslides) and 1st of 53 (PM2.5 forecasting)</span></div><span class="honour__year">2021–25</span></li>
-    <li class="honour"><span class="honour__mark" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span><div><span class="honour__title">Best Graduating Student, ranked 1st of 48</span><span class="honour__note">Industrial and Production Engineering, University of Ibadan · CGPA 3.86/4.00</span></div><span class="honour__year"></span></li>
-  </ul>
 </section>
 
-<section class="section" aria-labelledby="news">
-  <div class="section__head"><h2 class="section__title" id="news">News</h2></div>
-  {% include news-list.html limit=4 %}
-</section>
+<nav class="rail4" aria-label="On this page">
+  <a href="#top"><span class="mono">00</span><span>Top</span></a>
+  <a href="#about"><span class="mono">01</span><span>About</span></a>
+  <a href="#research"><span class="mono">02</span><span>Research</span></a>
+  <a href="#work"><span class="mono">03</span><span>Publications</span></a>
+  <a href="#journey"><span class="mono">04</span><span>Milestones</span></a>
+</nav>

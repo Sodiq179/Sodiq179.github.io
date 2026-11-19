@@ -1,44 +1,44 @@
 {% include base_path %}
 {% assign author = site.author %}
-{% assign email_parts = author.email | split: "@" %}
-<header class="band hero" aria-labelledby="name">
-  <svg class="hero__net" viewBox="0 0 600 420" aria-hidden="true" focusable="false">
-    <g class="hero__edges">
-      <path d="M40 330 L150 250 L270 300 L380 190 L520 240 M150 250 L210 120 L380 190 M210 120 L330 60 L470 90 L520 240 M270 300 L330 390 L470 350 L520 240 M380 190 L470 90 M40 330 L120 400 L330 390 M40 150 L210 120 M40 150 L150 250"/>
-    </g>
-    <g class="hero__route"><path d="M40 330 L150 250 L210 120 L330 60 L470 90"/></g>
-    <g class="hero__nodes">
-      <circle cx="40" cy="330" r="5"/><circle cx="150" cy="250" r="4"/><circle cx="270" cy="300" r="4"/>
-      <circle cx="380" cy="190" r="6"/><circle cx="520" cy="240" r="4"/><circle cx="210" cy="120" r="4"/>
-      <circle cx="330" cy="60" r="4"/><circle cx="470" cy="90" r="5"/><circle cx="330" cy="390" r="4"/>
-      <circle cx="470" cy="350" r="4"/><circle cx="120" cy="400" r="3"/><circle cx="40" cy="150" r="3"/>
-    </g>
-  </svg>
-  <div class="band__inner hero__inner">
-    <div class="hero__text">
-      <p class="band__kicker">Industrial Engineering · Data Science</p>
-      <h1 class="hero__name" id="name">Sodiq Babawale</h1>
-      <p class="hero__focus">Optimization and machine learning for <em>smarter</em> and more <em>resilient</em> supply chains</p>
-      <ul class="hero__tags" aria-label="Research areas">
-        <li>Optimization</li><li>Machine learning</li><li>Logistics</li><li>Digital twins</li>
-      </ul>
-      <div class="hero__actions">
-        <a class="hero__cv" href="{{ base_path }}{{ author.cv }}"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
-        <ul class="hero__links">
-          <li><a href="mailto:{{ author.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
-          <li><a href="{{ author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Scholar</span></a></li>
-          <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
-          <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
-          <li><a href="{{ author.zindi }}"><i class="fas fa-trophy" aria-hidden="true"></i><span>Zindi</span></a></li>
-        </ul>
+<header class="hero4" id="top" aria-labelledby="name">
+  <canvas class="hero4__net" id="net" aria-hidden="true"></canvas>
+  <div class="hero4__scrim" aria-hidden="true"></div>
+  <div class="hero4__inner">
+    <div class="hero4__text">
+      <p class="mono hero4__kicker"><span class="pulse" aria-hidden="true"></span>Industrial engineer · Data scientist</p>
+      <h1 class="hero4__name" id="name"><span>Sodiq</span> <em>Babawale</em></h1>
+      <p class="hero4__statement">I build models that turn
+        <span class="rot" data-words="uncertainty|noisy demand|sensor data|forecasts"><span class="rot__word is-on">uncertainty</span></span>
+        into better decisions for logistics and supply chains.</p>
+      <div class="hero4__actions">
+        <a class="btn4 btn4--solid" href="{{ base_path }}{{ author.cv }}"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
+        <a class="btn4 btn4--ghost" href="#research">Research <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
       </div>
+      <ul class="hero4__links" aria-label="Profiles">
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
+        <li><a href="{{ author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Scholar</span></a></li>
+        <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+        <li><a href="{{ author.zindi }}"><i class="fas fa-trophy" aria-hidden="true"></i><span>Zindi</span></a></li>
+      </ul>
     </div>
-    <figure class="hero__figure">
+    <figure class="hero4__figure" id="hub">
+      <div class="hero4__orbit" aria-hidden="true"><span></span><span></span><span></span></div>
       <picture>
         <source srcset="{{ base_path }}/images/sodiq-babawale.webp" type="image/webp">
         <img src="{{ base_path }}/images/sodiq-babawale.jpg" alt="Portrait of Sodiq Babawale" width="480" height="480" fetchpriority="high">
       </picture>
-      <figcaption><strong>Sodiq Babawale</strong><span>B.Sc. Industrial and Production Engineering, University of Ibadan</span></figcaption>
+      <figcaption class="mono">Lagos, Nigeria<br><span>6.52° N, 3.38° E</span></figcaption>
     </figure>
   </div>
+  <p class="hero4__legend mono" aria-hidden="true"><span class="dot dot--hub"></span>depot <span class="dot dot--flow"></span>shipment on a shortest path<span class="hero4__hint"> · move your cursor to create demand</span></p>
 </header>
+
+<section class="figures4" aria-label="Key numbers">
+  <div class="figures4__inner">
+    <div class="fig4 reveal"><span class="fig4__n" data-count="2">2</span><span class="fig4__l">peer-reviewed journal papers</span></div>
+    <div class="fig4 reveal"><span class="fig4__n">1<small>st</small></span><span class="fig4__l">of 48 in my B.Sc. class, First Class Honours</span></div>
+    <div class="fig4 reveal"><span class="fig4__n"><small>Top</small> <span data-count="1">1</span>%</span><span class="fig4__l">of 70,000+ data scientists on Zindi, with 45 medals</span></div>
+    <div class="fig4 fig4--gold reveal"><span class="fig4__n"><span data-count="170">170</span>k+</span><span class="fig4__l">students in the Huawei ICT Competition. My team won the Grand Prize.</span></div>
+  </div>
+</section>

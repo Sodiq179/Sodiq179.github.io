@@ -1,17 +1,21 @@
 {% include base_path %}
 {% assign author = site.author %}
+<div class="cta4">
+  <p class="mono cta4__k">Get in touch</p>
+  <p class="cta4__t">Interested in optimization, learning or supply chains? <em>Let's talk.</em></p>
+  <a class="cta4__mail" href="mailto:{{ author.email }}">{{ author.email }} <span aria-hidden="true">&rarr;</span></a>
+</div>
 <div class="foot">
   <div class="foot__id">
     <p class="foot__name">Sodiq Babawale</p>
-    <p class="foot__line">Optimization, data analytics and machine learning for logistics and supply chains</p>
-    <p class="foot__line foot__muted">{{ author.location }}</p>
+    <p class="foot__line">Optimization, data analytics and machine learning for logistics and supply chains · {{ author.location }}</p>
   </div>
   <ul class="foot__links">
-    <li><a href="mailto:{{ author.email }}">Email <span aria-hidden="true">↗</span></a></li>
     <li><a href="{{ author.googlescholar }}">Google Scholar <span aria-hidden="true">↗</span></a></li>
     <li><a href="https://github.com/{{ author.github }}">GitHub <span aria-hidden="true">↗</span></a></li>
     <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a></li>
     <li><a href="{{ author.zindi }}">Zindi <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ base_path }}{{ author.cv }}">CV <span aria-hidden="true">↗</span></a></li>
   </ul>
 </div>
 <div class="page__footer-copyright">
