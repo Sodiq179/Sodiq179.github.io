@@ -2,93 +2,104 @@
 permalink: /awards/
 title: "Awards and competitions"
 kicker: "Awards"
-lede: "International competition wins, teaching prizes, scholarships and academic distinctions, each listed once with its field size where known."
+v4: true
+lede: "International competition wins, teaching prizes, scholarships and academic distinctions, each with its field size where known."
 description: "Awards, competition results and scholarships of Sodiq Babawale, including the Huawei ICT Competition Global Grand Prize."
+stats:
+  - { n: "Grand Prize", l: "Huawei ICT Competition Global Final, 2024" }
+  - { n: "Top 1%", l: "of 70,000+ data scientists on Zindi" }
+  - { n: "2×", l: "First Prize, Huawei ICT Global Teaching Competition" }
+  - { n: "5", l: "scholarships and funded programmes" }
+jumps:
+  - { id: "huawei", label: "Huawei ICT Competition" }
+  - { id: "zindi", label: "Data science competitions" }
+  - { id: "prizes", label: "Teaching and research prizes" }
+  - { id: "scholarships", label: "Scholarships and distinctions" }
 redirect_from:
   - /honors/
 ---
 {% include base_path %}
 {% assign a = site.data.awards %}
 
-<section class="section" aria-labelledby="featured">
-  <div class="feature">
-    <p class="feature__label"><i class="fas fa-trophy" aria-hidden="true"></i> Featured</p>
-    <h2 class="feature__title" id="featured">{{ a.featured.title }}</h2>
-    <p class="feature__summary">{{ a.featured.summary }}</p>
-    <ol class="steps" aria-label="Route to the Grand Prize">
+<section class="s4" id="huawei" aria-labelledby="huawei-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">01</span><h2 class="sh4__t" id="huawei-h">Huawei ICT Competition</h2></div>
+  <article class="route4 reveal">
+    <div class="route4__head">
+      <p class="mono route4__k"><i class="fas fa-trophy" aria-hidden="true"></i> {{ a.featured.title }}</p>
+      <h3 class="route4__t">Grand Prize, Global Final</h3>
+      <p class="route4__s">{{ a.featured.summary }}</p>
+    </div>
+    <div class="route4__funnel" aria-label="Field size">
+      <div><span class="route4__n">170,000<small>+</small></span><span class="route4__l">students entered</span></div>
+      <div><span class="route4__n">2,000<small>+</small></span><span class="route4__l">institutions</span></div>
+      <div class="is-gold"><span class="route4__n">1</span><span class="route4__l">Grand Prize team</span></div>
+    </div>
+    <ol class="route4__steps" aria-label="Route to the Grand Prize">
       {% for s in a.featured.steps %}
-      <li class="step{% if s.win %} step--win{% endif %}">
-        <span class="step__marker" aria-hidden="true">{% if s.win %}<i class="fas fa-trophy"></i>{% else %}{{ forloop.index }}{% endif %}</span>
-        <span class="step__stage">{{ s.stage }} · {{ s.date }}</span>
-        <span class="step__result">{{ s.result }}</span>
-        <span class="step__place">{{ s.place }}</span>
+      <li class="route4__step{% if s.win %} is-win{% endif %}">
+        <span class="route4__node" aria-hidden="true">{% if s.win %}<i class="fas fa-trophy"></i>{% else %}{{ forloop.index }}{% endif %}</span>
+        <span class="mono route4__date">{{ s.date }} · {{ s.stage }}</span>
+        <span class="route4__res">{{ s.result }}</span>
+        <span class="route4__place">{{ s.place }}</span>
       </li>
       {% endfor %}
     </ol>
-  </div>
+  </article>
 </section>
 
-{% for g in a.groups %}
-{% unless g.compact %}
-<section class="section" aria-labelledby="{{ g.id }}">
-  <div class="section__head"><h2 class="section__title" id="{{ g.id }}">{{ g.title }}</h2></div>
-  <ul class="cards{% if g.items.size == 1 %} cards--one{% endif %}">
-    {% for it in g.items %}
-    <li class="card">
-      <p class="card__kicker">{{ it.org }}</p>
-      <h3 class="card__title">{{ it.title }}</h3>
-      <p class="card__text">{{ it.note }}</p>
-      <div class="card__foot"><span class="year-badges">{% for y in it.years %}<span class="year-badge">{{ y }}</span>{% endfor %}</span></div>
-    </li>
+<section class="s4" id="zindi" aria-labelledby="zindi-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">02</span><h2 class="sh4__t" id="zindi-h">Data science competitions</h2><a class="sh4__more mono" href="{{ site.author.zindi }}">Zindi profile &nearr;</a></div>
+  <p class="lead4 reveal">{{ a.zindi.summary }}</p>
+  <div class="lb4">
+    {% for r in a.zindi.results %}
+    {% assign pct = r.rank | times: 100.0 | divided_by: r.field %}
+    {% assign beat = 100.0 | minus: pct %}
+    <article class="lb4__card{% if r.rank == 1 %} is-win{% endif %} reveal">
+      <div class="lb4__rank"><span class="lb4__hash">#</span>{{ r.rank }}<span class="lb4__of">of {{ r.field }}</span></div>
+      <h3 class="lb4__t">{{ r.challenge }}</h3>
+      <p class="lb4__x">{{ r.topic }}</p>
+      <div class="lb4__bar" role="img" aria-label="Ranked {{ r.rank }} of {{ r.field }}, top {{ pct | round: 1 }} percent" title="Rank {{ r.rank }} of {{ r.field }} (top {{ pct | round: 1 }}%)">
+        <span class="lb4__fill" style="width: {{ beat | round: 1 }}%"></span>
+        <span class="lb4__pin" style="left: {{ beat | round: 1 }}%"></span>
+      </div>
+      <p class="mono lb4__pct">Top {{ pct | round: 1 }}% of the field</p>
+      <a class="lb4__code" href="{{ r.code }}"><i class="fab fa-github" aria-hidden="true"></i> Code &nearr;</a>
+    </article>
     {% endfor %}
-  </ul>
-</section>
-{% endunless %}
-{% endfor %}
-
-<section class="section" aria-labelledby="zindi">
-  <div class="section__head">
-    <h2 class="section__title" id="zindi">Data science competitions</h2>
-    <a class="section__more" href="{{ site.author.zindi }}">Zindi profile <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
   </div>
-  <ul class="zindi-summary">
-    <li class="stat"><span class="stat__value">Top 1%</span><span class="stat__label">of 70,000+ Zindi data scientists</span></li>
-    <li class="stat"><span class="stat__value">45</span><span class="stat__label">medals, 2021 to 2025</span></li>
-    <li class="stat"><span class="stat__value">2 wins</span><span class="stat__label">1st-place finishes, shown below</span></li>
-  </ul>
-  <div class="table-wrap">
-    <table class="data">
-      <thead><tr><th scope="col">Challenge</th><th scope="col">Rank</th><th scope="col">Code</th></tr></thead>
-      <tbody>
-        {% for r in a.zindi.results %}
-        <tr>
-          <td><strong>{{ r.challenge }}</strong><span class="muted">{{ r.topic }}</span></td>
-          <td class="num"><span class="rank{% if r.rank == 1 %} rank--1{% endif %}">{% if r.rank == 1 %}1st{% elsif r.rank == 2 %}2nd{% elsif r.rank == 3 %}3rd{% else %}{{ r.rank }}th{% endif %}</span> of {{ r.field }}</td>
-          <td><a class="btn-link" href="{{ r.code }}" aria-label="Code for {{ r.challenge }}"><i class="fab fa-github" aria-hidden="true"></i><span class="btn-text"> Code</span></a></td>
-        </tr>
+</section>
+
+<section class="s4" id="prizes" aria-labelledby="prizes-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">03</span><h2 class="sh4__t" id="prizes-h">Teaching and research prizes</h2></div>
+  <div class="prize4">
+    {% for g in a.groups %}{% unless g.compact %}{% for it in g.items %}
+    <article class="prize4__card reveal">
+      <div class="prize4__years">{% for y in it.years %}<span class="mono">{{ y }}</span>{% endfor %}</div>
+      <p class="mono prize4__k">{{ g.title }}</p>
+      <h3 class="prize4__t">{{ it.title }}</h3>
+      <p class="prize4__org">{{ it.org }}</p>
+      <p class="prize4__x">{{ it.note }}</p>
+    </article>
+    {% endfor %}{% endunless %}{% endfor %}
+  </div>
+</section>
+
+<section class="s4" id="scholarships" aria-labelledby="scholarships-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">04</span><h2 class="sh4__t" id="scholarships-h">Scholarships and distinctions</h2></div>
+  <div class="cols4">
+    {% for g in a.groups %}{% if g.compact %}
+    <div class="reveal">
+      <p class="mono cols4__h">{{ g.title }}</p>
+      <ul class="list4">
+        {% for it in g.items %}
+        <li><span class="mono list4__y">{% if it.years %}{{ it.years | join: ", " }}{% else %}B.Sc.{% endif %}</span><div><span class="list4__t">{{ it.title }}</span><span class="list4__o">{{ it.org }}</span></div></li>
         {% endfor %}
-      </tbody>
-    </table>
+      </ul>
+    </div>
+    {% endif %}{% endfor %}
   </div>
-</section>
-
-{% for g in a.groups %}
-{% if g.compact %}
-<section class="section" aria-labelledby="{{ g.id }}">
-  <div class="section__head"><h2 class="section__title" id="{{ g.id }}">{{ g.title }}</h2></div>
-  <ul class="award-list">
-    {% for it in g.items %}
-    <li class="award-list__item">
-      <div><span class="award-list__title">{{ it.title }}</span><span class="award-list__org">{{ it.org }}</span></div>
-      <span class="award-list__year">{{ it.years | join: ", " }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
-{% endfor %}
-
-<section class="section" aria-labelledby="certs">
-  <div class="section__head"><h2 class="section__title" id="certs">Certifications</h2></div>
-  <ul class="tags">{% for c in a.certifications %}<li class="tag">{{ c }}</li>{% endfor %}</ul>
+  <div class="certs4 reveal">
+    <p class="mono cols4__h">Certifications</p>
+    <ul class="certs4__list">{% for c in a.certifications %}<li><i class="fas fa-certificate" aria-hidden="true"></i>{{ c }}</li>{% endfor %}</ul>
+  </div>
 </section>

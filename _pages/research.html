@@ -2,8 +2,19 @@
 permalink: /research/
 title: "Research"
 kicker: "Research"
-lede: "Peer-reviewed papers, reproductions of recent operations research papers, research internships and selected applied projects."
+v4: true
+lede: "Peer-reviewed papers, reproductions of recent operations research papers, research internships and applied projects."
 description: "Publications, research experience and paper reproductions by Sodiq Babawale."
+stats:
+  - { n: "2", l: "journal papers" }
+  - { n: "2", l: "paper reproductions, with code" }
+  - { n: "2", l: "research internships" }
+  - { n: "4", l: "applied projects" }
+jumps:
+  - { id: "publications", label: "Publications" }
+  - { id: "reproductions", label: "Reproductions" }
+  - { id: "experience", label: "Research experience" }
+  - { id: "projects", label: "Projects" }
 redirect_from:
   - /publications/
   - /projects/
@@ -11,94 +22,136 @@ redirect_from:
 ---
 {% include base_path %}
 
-<section class="section" aria-labelledby="publications">
-  <div class="section__head">
-    <h2 class="section__title" id="publications">Publications</h2>
-    <a class="section__more" href="{{ site.author.googlescholar }}">Google Scholar <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-  </div>
-  {% include pub-list.html summaries=true %}
-</section>
-
-<section class="section" aria-labelledby="reproductions">
-  <div class="section__head"><h2 class="section__title" id="reproductions">Paper reproductions and extensions</h2></div>
-  <p class="section__intro">Rebuilding published results from scratch, then pushing the method somewhere the authors didn't take it.</p>
-  <ul class="cards cards--one">
-    <li class="card">
-      <p class="card__kicker">2026 · with M. S. Jamal · reproduction of van der Haar, Wellens, Boute &amp; Basten (2024), <em>European Journal of Operational Research</em></p>
-      <h3 class="card__title">Supervised learning for integrated forecasting and lost-sales inventory control</h3>
-      <span class="card__result">Average gap to optimal cut from 3.89% to 0.69% under stochastic lead times</span>
-      <figure class="card__fig">
-        <a href="{{ base_path }}/images/research/inventory-gaps.png"><picture><source srcset="{{ base_path }}/images/research/inventory-gaps.webp" type="image/webp"><img src="{{ base_path }}/images/research/inventory-gaps.png" alt="Cost above the exact optimum for five inventory policies under four lead-time scenarios" loading="lazy" width="1600" height="411"></picture></a>
-        <figcaption>Cost above the exact optimum on the test run. The fixed-lead-time model (green) loses up to 27% when orders arrive in sequence with high variance; the arrival-period loss (red) stays close to optimal in every scenario.</figcaption>
-      </figure>
-      <div class="card__text">
-        <ul>
-          <li>Reproduced the lost-sales results at the paper's full training budget. Exact value iteration matched all 32 optimal costs on the Zipkin (2008) testbed, and the cost-trained LightGBM policy, using a custom gradient objective, came within 0.05 of the published cost in 28 of 32 instances.</li>
-          <li>Rebuilt the paper's confidential real-data study on the public M5 Walmart data. The learned policy was the cheapest of four methods in 11 of 16 settings.</li>
-          <li><strong>Extension:</strong> designed a loss on the realised arrival period for stochastic lead times, cutting the average gap to the optimal policy from 3.89% (fixed-lead-time model) to 0.69%, and the worst case from 27% to 1.39%. It was the best of all methods tested.</li>
-        </ul>
+<section class="s4" id="publications" aria-labelledby="publications-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">01</span><h2 class="sh4__t" id="publications-h">Publications</h2><a class="sh4__more mono" href="{{ site.author.googlescholar }}">Google Scholar &nearr;</a></div>
+  <ol class="pub4">
+    {% for p in site.data.publications %}
+    <li class="pub4__item reveal">
+      <div class="pub4__meta">
+        <span class="pub4__year">{{ p.year }}</span>
+        <span class="mono pub4__venue">{{ p.venue_short }}</span>
       </div>
-      <div class="card__foot"><ul class="tags"><li class="tag">Inventory control</li><li class="tag">Dynamic programming</li><li class="tag">LightGBM</li><li class="tag">M5 data</li></ul><div class="card__links"><a class="btn-link" href="https://github.com/Sodiq179/asl-lostsales-inventory"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a></div></div>
-    </li>
-    <li class="card">
-      <p class="card__kicker">2026 · with M. Sammir · replication of Ruggles et al. (2024), <em>Advances in Applied Energy</em></p>
-      <h3 class="card__title">Planning reliable wind- and solar-based electricity systems as a linear program</h3>
-      <span class="card__result">12 of 13 capacities reproduced within 10% across 5,000+ LPs</span>
-      <figure class="card__fig">
-        <a href="{{ base_path }}/images/research/lp-capacities.png"><picture><source srcset="{{ base_path }}/images/research/lp-capacities.webp" type="image/webp"><img src="{{ base_path }}/images/research/lp-capacities.png" alt="Reproduced capacities for 42 single-year systems compared with the published values" loading="lazy" width="1516" height="573"></picture></a>
-        <figcaption>Capacities of the 42 single-year systems (dots) and their mean (bar), against the published values (dashed).</figcaption>
-      </figure>
-      <div class="card__text">
-        <ul>
-          <li>Implemented the capacity-expansion and dispatch LP in Gurobi over 42 weather years in 4-hour steps (5,000+ LPs) and derived its dual. Reproduced the paper's hard and easy weather years exactly, with cost recovery from dual prices holding to machine precision.</li>
-          <li><strong>Extensions:</strong> pricing lost load in planning lowered tested total cost by up to 26%, and cycling hydrogen storage within each year shrank the store by 27% for 1.3% more cost.</li>
-        </ul>
-      </div>
-      <div class="card__foot"><ul class="tags"><li class="tag">Linear programming</li><li class="tag">Duality</li><li class="tag">Gurobi</li><li class="tag">Energy systems</li></ul><div class="card__links"><a class="btn-link" href="https://github.com/Sodiq179/weather-year-reliability-lp"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a></div></div>
-    </li>
-  </ul>
-</section>
-
-<section class="section" aria-labelledby="experience">
-  <div class="section__head"><h2 class="section__title" id="experience">Research experience</h2></div>
-  <ul class="entries">
-    <li class="entry">
-      <div class="entry__top"><h3 class="entry__role">Research Intern</h3><span class="entry__date">Feb 2024 – Aug 2024</span></div>
-      <p class="entry__org">Climate Smart Decision Support Systems (CLIMDES), Michigan State University · remote</p>
-      <ul>
-        <li>Built a Unity-based digital twin of a commercial strawberry greenhouse that mirrors its geometry, its 56-node temperature–humidity sensor network and its telemetry streams (MQTT/API).</li>
-        <li>Developed an offline Thompson-sampling (Bayesian bandit) policy that ranks sensors by informativeness across seasons and psychrometric variables, so a smaller sensor subset can represent the full network.</li>
-        <li>Implemented a decision-support interface pairing a 2D dashboard with 3D visualisation of microclimate gradients. Published in <em>AgriEngineering</em> (2025).</li>
-      </ul>
-    </li>
-    <li class="entry">
-      <div class="entry__top"><h3 class="entry__role">Undergraduate Researcher</h3><span class="entry__date">Aug 2023 – Apr 2024</span></div>
-      <p class="entry__org">Department of Industrial and Production Engineering, University of Ibadan</p>
-      <ul>
-        <li>Designed and compared two convolutional neural networks for automated defect detection in cast submersible pump impellers, using a real industrial image dataset.</li>
-        <li>Benchmarked accuracy, precision, recall, F1-score and inference time with paired statistical tests to judge suitability for high-throughput inspection lines. Published in <em>IJAMT</em> (2025).</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-<section class="section" aria-labelledby="projects">
-  <div class="section__head">
-    <h2 class="section__title" id="projects">Selected projects</h2>
-    <a class="section__more" href="https://github.com/{{ site.author.github }}">GitHub <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-  </div>
-  <ul class="cards">
-    {% for p in site.data.projects %}
-    <li class="card">
-      <p class="card__kicker">{{ p.context }}</p>
-      <h3 class="card__title">{{ p.title }}</h3>
-      <span class="card__result{% if p.result contains '1st' %} card__result--win{% endif %}">{{ p.result }}</span>
-      <p class="card__text">{{ p.text }}</p>
-      <div class="card__foot">
-        <ul class="tags">{% for t in p.tags %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
-        {% if p.code %}<a class="btn-link" href="{{ p.code }}"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
+      <div class="pub4__body">
+        <h3 class="pub4__title">{{ p.title }}</h3>
+        <p class="pub4__authors">{{ p.authors }}</p>
+        <p class="pub4__journal"><em>{{ p.venue }}</em>, {{ p.details }}, {{ p.year }}</p>
+        <p class="pub4__abs">{{ p.summary }}</p>
+        <div class="pub4__links">
+          <a class="btn4s" href="https://doi.org/{{ p.doi }}"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Paper</a>
+          {% if p.code %}<a class="btn4s" href="{{ p.code }}"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
+        </div>
       </div>
     </li>
     {% endfor %}
-  </ul>
+  </ol>
+</section>
+
+<section class="s4" id="reproductions" aria-labelledby="reproductions-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">02</span><h2 class="sh4__t" id="reproductions-h">Reproductions and extensions</h2></div>
+  <p class="lead4 reveal">I rebuild recent operations research papers from scratch, check every published number I can, then take the method somewhere the authors did not.</p>
+
+  <article class="case4 reveal">
+    <header class="case4__head">
+      <p class="mono case4__k">2026 · with M. S. Jamal · van der Haar, Wellens, Boute &amp; Basten (2024), <em>European Journal of Operational Research</em></p>
+      <h3 class="case4__t">Supervised learning for integrated forecasting and lost-sales inventory control</h3>
+    </header>
+    <dl class="case4__metrics">
+      <div><dt>32<small>/32</small></dt><dd>optimal costs matched exactly on the Zipkin (2008) testbed</dd></div>
+      <div><dt>11<small>/16</small></dt><dd>real-data settings on M5 Walmart data where the learned policy was cheapest</dd></div>
+      <div class="is-key"><dt>0.69<small>%</small></dt><dd>average gap to optimal with my new loss under stochastic lead times, down from 3.89%</dd></div>
+    </dl>
+    <figure class="case4__fig">
+      <a href="{{ base_path }}/images/research/inventory-gaps.png"><picture><source srcset="{{ base_path }}/images/research/inventory-gaps.webp" type="image/webp"><img src="{{ base_path }}/images/research/inventory-gaps.png" alt="Cost above the exact optimum for five inventory policies under four lead-time scenarios" loading="lazy" width="1600" height="411"></picture></a>
+      <figcaption>Cost above the exact optimum on the test run. The fixed-lead-time model (green) loses up to 27% when orders arrive in sequence with high variance. The arrival-period loss (red) stays close to optimal in every scenario.</figcaption>
+    </figure>
+    <div class="case4__cols">
+      <div><p class="mono case4__lab">Reproduced</p>
+        <ul>
+          <li>Exact value iteration matched all 32 optimal costs. The cost-trained LightGBM policy, with a custom gradient objective, came within 0.05 of the published cost in 28 of 32 instances.</li>
+          <li>Rebuilt the paper's confidential real-data study on the public M5 Walmart data.</li>
+        </ul></div>
+      <div><p class="mono case4__lab case4__lab--x">Extended</p>
+        <ul>
+          <li>Designed a loss on the realised arrival period for stochastic lead times. The average gap fell from 3.89% to 0.69% and the worst case from 27% to 1.39%, the best of all methods tested.</li>
+        </ul></div>
+    </div>
+    <footer class="case4__foot">
+      <ul class="tags"><li class="tag">Inventory control</li><li class="tag">Dynamic programming</li><li class="tag">LightGBM</li><li class="tag">M5 data</li></ul>
+      <a class="btn4s btn4s--solid" href="https://github.com/Sodiq179/asl-lostsales-inventory"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a>
+    </footer>
+  </article>
+
+  <article class="case4 reveal">
+    <header class="case4__head">
+      <p class="mono case4__k">2026 · with M. Sammir · Ruggles et al. (2024), <em>Advances in Applied Energy</em></p>
+      <h3 class="case4__t">Planning reliable wind- and solar-based electricity systems as a linear program</h3>
+    </header>
+    <dl class="case4__metrics">
+      <div><dt>5,000<small>+</small></dt><dd>linear programs over 42 weather years in 4-hour steps, solved in Gurobi</dd></div>
+      <div><dt>12<small>/13</small></dt><dd>published capacities reproduced within 10%, with cost recovery from duals to machine precision</dd></div>
+      <div class="is-key"><dt>&minus;26<small>%</small></dt><dd>tested total cost when lost load is priced in planning, my first extension</dd></div>
+    </dl>
+    <figure class="case4__fig">
+      <a href="{{ base_path }}/images/research/lp-capacities.png"><picture><source srcset="{{ base_path }}/images/research/lp-capacities.webp" type="image/webp"><img src="{{ base_path }}/images/research/lp-capacities.png" alt="Reproduced capacities for 42 single-year systems compared with the published values" loading="lazy" width="1516" height="573"></picture></a>
+      <figcaption>Capacities of the 42 single-year systems (dots) and their mean (bar), against the published values (dashed).</figcaption>
+    </figure>
+    <div class="case4__cols">
+      <div><p class="mono case4__lab">Reproduced</p>
+        <ul>
+          <li>Implemented the capacity-expansion and dispatch LP and derived its dual. Reproduced the paper's hard and easy weather years exactly.</li>
+        </ul></div>
+      <div><p class="mono case4__lab case4__lab--x">Extended</p>
+        <ul>
+          <li>Pricing lost load in planning lowered tested total cost by up to 26%.</li>
+          <li>Cycling hydrogen storage within each year shrank the store by 27% for 1.3% more cost.</li>
+        </ul></div>
+    </div>
+    <footer class="case4__foot">
+      <ul class="tags"><li class="tag">Linear programming</li><li class="tag">Duality</li><li class="tag">Gurobi</li><li class="tag">Energy systems</li></ul>
+      <a class="btn4s btn4s--solid" href="https://github.com/Sodiq179/weather-year-reliability-lp"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a>
+    </footer>
+  </article>
+</section>
+
+<section class="s4" id="experience" aria-labelledby="experience-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">03</span><h2 class="sh4__t" id="experience-h">Research experience</h2></div>
+  <div class="rx4">
+    <article class="rx4__card reveal">
+      <div class="rx4__top"><span class="mono2" aria-hidden="true">MSU</span><div><h3 class="rx4__role">Research Intern</h3><p class="rx4__org">Climate Smart Decision Support Systems (CLIMDES), Michigan State University · remote</p></div></div>
+      <p class="mono rx4__date">Feb 2024 – Aug 2024</p>
+      <ul>
+        <li>Built a Unity digital twin of a commercial strawberry greenhouse mirroring its geometry, its 56-node temperature–humidity sensor network and its telemetry streams (MQTT/API).</li>
+        <li>Developed an offline Thompson-sampling policy that ranks sensors by informativeness, so a smaller subset can represent the full network.</li>
+        <li>Built a decision-support interface pairing a 2D dashboard with 3D views of microclimate gradients.</li>
+      </ul>
+      <p class="rx4__out"><i class="fas fa-arrow-right" aria-hidden="true"></i> Published in <em>AgriEngineering</em> (2025)</p>
+    </article>
+    <article class="rx4__card reveal">
+      <div class="rx4__top"><span class="mono2" aria-hidden="true">UI</span><div><h3 class="rx4__role">Undergraduate Researcher</h3><p class="rx4__org">Department of Industrial and Production Engineering, University of Ibadan</p></div></div>
+      <p class="mono rx4__date">Aug 2023 – Apr 2024</p>
+      <ul>
+        <li>Designed and compared two convolutional neural networks for automated defect detection in cast submersible pump impellers, on a real industrial image dataset.</li>
+        <li>Benchmarked accuracy, precision, recall, F1-score and inference time with paired statistical tests, to judge fitness for high-throughput inspection lines.</li>
+      </ul>
+      <p class="rx4__out"><i class="fas fa-arrow-right" aria-hidden="true"></i> Published in <em>IJAMT</em> (2025)</p>
+    </article>
+  </div>
+</section>
+
+<section class="s4" id="projects" aria-labelledby="projects-h">
+  <div class="sh4 reveal"><span class="mono sh4__n">04</span><h2 class="sh4__t" id="projects-h">Applied projects</h2><a class="sh4__more mono" href="https://github.com/{{ site.author.github }}">GitHub &nearr;</a></div>
+  <div class="bento4">
+    {% for p in site.data.projects %}
+    <article class="bento4__card{% if forloop.first %} bento4__card--wide{% endif %} reveal">
+      <p class="mono bento4__k">{{ p.context }}</p>
+      <h3 class="bento4__t">{{ p.title }}</h3>
+      <p class="bento4__r{% if p.result contains '1st' %} is-win{% endif %}">{{ p.result }}</p>
+      <p class="bento4__x">{{ p.text }}</p>
+      <footer class="bento4__f">
+        <ul class="tags">{% for t in p.tags %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
+        {% if p.code %}<a class="bento4__code" href="{{ p.code }}" aria-label="Code for {{ p.title }}"><i class="fab fa-github" aria-hidden="true"></i> Code &nearr;</a>{% endif %}
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
 </section>

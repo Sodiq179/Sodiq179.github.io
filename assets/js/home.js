@@ -7,7 +7,7 @@
 
   /* ---------- Live network ---------- */
   var cv = document.getElementById("net");
-  var hero = document.querySelector(".hero4");
+  var hero = document.querySelector(".hero4, .band4");
   var hubEl = document.getElementById("hub");
   if (cv && hero) {
     var ctx = cv.getContext("2d");
@@ -28,8 +28,12 @@
 
       nodes = []; depots = [];
       // Main depot sits at the centre of the portrait
-      var hr = hubEl.getBoundingClientRect();
-      nodes.push({ x: hr.left - r.left + hr.width / 2, y: hr.top - r.top + Math.min(hr.width, hr.height) / 2, depot: 2 });
+      if (hubEl) {
+        var hr = hubEl.getBoundingClientRect();
+        nodes.push({ x: hr.left - r.left + hr.width / 2, y: hr.top - r.top + Math.min(hr.width, hr.height) / 2, depot: 2 });
+      } else {
+        nodes.push({ x: W * (W < 720 ? 0.85 : 0.8), y: H * 0.45, depot: 1 });
+      }
       depots.push(0);
       var target_n = Math.round(Math.max(34, Math.min(90, (W * H) / 15000)));
       var minD = Math.sqrt((W * H) / target_n) * 0.62, tries = 0;
@@ -124,7 +128,7 @@
       }
       // nodes
       nodes.forEach(function (n, i) {
-        if (i === 0) return;
+        if (i === 0 && hubEl) return;
         if (n.depot) {
           ctx.fillStyle = "rgba(" + gold + ",0.9)";
           ctx.beginPath(); ctx.arc(n.x, n.y, 4.5, 0, 6.283); ctx.fill();
@@ -240,14 +244,15 @@
   }
 
   /* ---------- Section rail ---------- */
-  var rail = document.querySelector(".rail4"), links = rail ? rail.querySelectorAll("a") : [];
+  var rail = document.querySelector(".rail4") || document.querySelector(".jump4"), links = rail ? rail.querySelectorAll("a") : [];
   var secs = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute("href")); });
   function railUpdate() {
     if (!rail) return;
     var y = window.innerHeight * 0.35, cur = 0;
     secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= y) cur = i; });
     links.forEach(function (a, i) { a.classList.toggle("is-on", i === cur); });
-    rail.classList.toggle("is-shown", window.scrollY > window.innerHeight * 0.5);
+    if (rail.classList.contains("rail4")) rail.classList.toggle("is-shown", window.scrollY > window.innerHeight * 0.5);
+    else if (window.scrollY < 40 || secs[0] && secs[0].getBoundingClientRect().top > y) links.forEach(function (a) { a.classList.remove("is-on"); });
   }
   var ticking = false;
   window.addEventListener("scroll", function () {

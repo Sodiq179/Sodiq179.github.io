@@ -3,6 +3,9 @@ layout: default
 ---
 {% include base_path %}
 {% unless page.hide_title %}
+{% if page.v4 %}
+{% include pagehead.html %}
+{% else %}
 <header class="band band--page">
   <div class="band__inner">
     {% if page.kicker %}<p class="band__kicker">{{ page.kicker }}</p>{% endif %}
@@ -10,11 +13,12 @@ layout: default
     {% if page.lede %}<p class="band__lede">{{ page.lede }}</p>{% endif %}
   </div>
 </header>
+{% endif %}
 {% endunless %}
 {% if page.hero %}{% include hero.html %}{% endif %}
-<div id="main" role="main"{% if page.main_class %} class="{{ page.main_class }}"{% endif %}>
+<div id="main" role="main"{% if page.main_class %} class="{{ page.main_class }}"{% elsif page.v4 %} class="home4 inner4"{% endif %}>
   <article class="page">
     <div class="page__content">{{ content }}</div>
   </article>
 </div>
-{% if page.home_js %}<script src="{{ base_path }}/assets/js/home.js" defer></script>{% endif %}
+{% if page.home_js or page.v4 %}<script src="{{ base_path }}/assets/js/home.js" defer></script>{% endif %}

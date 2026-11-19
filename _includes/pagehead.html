@@ -1,0 +1,21 @@
+<header class="band4" aria-labelledby="page-title">
+  <canvas class="hero4__net" id="net" aria-hidden="true"></canvas>
+  <div class="band4__scrim" aria-hidden="true"></div>
+  <div class="band4__inner">
+    {% if page.kicker %}<p class="mono band4__kicker"><span class="pulse" aria-hidden="true"></span>{{ page.kicker }}</p>{% endif %}
+    <h1 class="band4__title" id="page-title">{{ page.title }}</h1>
+    {% if page.lede %}<p class="band4__lede">{{ page.lede }}</p>{% endif %}
+    {% if page.stats %}
+    <dl class="band4__stats">
+      {% for s in page.stats %}<div><dt>{{ s.n }}</dt><dd>{{ s.l }}</dd></div>{% endfor %}
+    </dl>
+    {% endif %}
+  </div>
+</header>
+{% if page.jumps %}
+<nav class="jump4" aria-label="On this page">
+  <div class="jump4__inner">
+    {% for j in page.jumps %}<a href="#{{ j.id }}"><span class="mono">{{ forloop.index | prepend: '0' }}</span>{{ j.label }}</a>{% endfor %}
+  </div>
+</nav>
+{% endif %}
