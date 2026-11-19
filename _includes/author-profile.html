@@ -1,0 +1,32 @@
+{% include base_path %}
+{% assign author = site.author %}
+<div class="profile" itemscope itemtype="http://schema.org/Person">
+  <picture class="profile__photo">
+    <source srcset="{{ base_path }}/images/sodiq-babawale.webp" type="image/webp">
+    <img src="{{ base_path }}/images/{{ author.avatar }}" alt="Portrait of Sodiq Babawale" width="480" height="480" fetchpriority="high" itemprop="image">
+  </picture>
+  <div class="profile__id">
+    <h2 class="profile__name" itemprop="name">{{ author.name }}</h2>
+    <p class="profile__tagline">{{ author.tagline }}</p>
+  </div>
+  <ul class="profile__links">
+    <li class="profile__meta"><i class="fas fa-fw fa-location-dot" aria-hidden="true"></i><span itemprop="homeLocation">{{ author.location }}</span></li>
+    {% if author.email %}
+    {% assign email_parts = author.email | split: "@" %}
+    <li><a class="js-email" href="#" data-user="{{ email_parts[0] }}" data-domain="{{ email_parts[1] }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
+    {% endif %}
+    {% if author.googlescholar %}<li><a href="{{ author.googlescholar }}" rel="me"><i class="ai ai-fw ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a></li>{% endif %}
+    {% if author.github %}<li><a href="https://github.com/{{ author.github }}" rel="me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>{% endif %}
+    {% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>{% endif %}
+    {% if author.zindi %}<li><a href="{{ author.zindi }}" rel="me"><i class="fas fa-fw fa-trophy" aria-hidden="true"></i><span>Zindi</span></a></li>{% endif %}
+  </ul>
+  {% if author.cv %}
+  <a class="btn-primary profile__cv" href="{{ base_path }}{{ author.cv }}"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
+  {% endif %}
+</div>
+<script>
+  // Build the mailto link in the browser so the address is not sitting in the page for spam bots
+  document.querySelectorAll(".js-email").forEach(function (a) {
+    a.href = "mailto:" + a.dataset.user + "@" + a.dataset.domain;
+  });
+</script>

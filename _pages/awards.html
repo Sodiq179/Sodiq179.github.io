@@ -1,0 +1,94 @@
+---
+permalink: /awards/
+title: "Awards and competitions"
+kicker: "Awards"
+lede: "International competition wins, teaching prizes, scholarships and academic distinctions, each listed once with its field size where known."
+description: "Awards, competition results and scholarships of Sodiq Babawale, including the Huawei ICT Competition Global Grand Prize."
+redirect_from:
+  - /honors/
+---
+{% include base_path %}
+{% assign a = site.data.awards %}
+
+<section class="section" aria-labelledby="featured">
+  <div class="feature">
+    <p class="feature__label"><i class="fas fa-trophy" aria-hidden="true"></i> Featured</p>
+    <h2 class="feature__title" id="featured">{{ a.featured.title }}</h2>
+    <p class="feature__summary">{{ a.featured.summary }}</p>
+    <ol class="steps" aria-label="Route to the Grand Prize">
+      {% for s in a.featured.steps %}
+      <li class="step{% if s.win %} step--win{% endif %}">
+        <span class="step__marker" aria-hidden="true">{% if s.win %}<i class="fas fa-trophy"></i>{% else %}{{ forloop.index }}{% endif %}</span>
+        <span class="step__stage">{{ s.stage }} · {{ s.date }}</span>
+        <span class="step__result">{{ s.result }}</span>
+        <span class="step__place">{{ s.place }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{% for g in a.groups %}
+{% unless g.compact %}
+<section class="section" aria-labelledby="{{ g.id }}">
+  <div class="section__head"><h2 class="section__title" id="{{ g.id }}">{{ g.title }}</h2></div>
+  <ul class="cards{% if g.items.size == 1 %} cards--one{% endif %}">
+    {% for it in g.items %}
+    <li class="card">
+      <p class="card__kicker">{{ it.org }}</p>
+      <h3 class="card__title">{{ it.title }}</h3>
+      <p class="card__text">{{ it.note }}</p>
+      <div class="card__foot"><span class="year-badges">{% for y in it.years %}<span class="year-badge">{{ y }}</span>{% endfor %}</span></div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endunless %}
+{% endfor %}
+
+<section class="section" aria-labelledby="zindi">
+  <div class="section__head">
+    <h2 class="section__title" id="zindi">Data science competitions</h2>
+    <a class="section__more" href="{{ site.author.zindi }}">Zindi profile <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </div>
+  <ul class="zindi-summary">
+    <li class="stat"><span class="stat__value">Top 1%</span><span class="stat__label">of 70,000+ Zindi data scientists</span></li>
+    <li class="stat"><span class="stat__value">45</span><span class="stat__label">medals, 2021 to 2025</span></li>
+    <li class="stat"><span class="stat__value">2 wins</span><span class="stat__label">1st-place finishes, shown below</span></li>
+  </ul>
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th scope="col">Challenge</th><th scope="col">Rank</th><th scope="col">Code</th></tr></thead>
+      <tbody>
+        {% for r in a.zindi.results %}
+        <tr>
+          <td><strong>{{ r.challenge }}</strong><span class="muted">{{ r.topic }}</span></td>
+          <td class="num"><span class="rank{% if r.rank == 1 %} rank--1{% endif %}">{% if r.rank == 1 %}1st{% elsif r.rank == 2 %}2nd{% elsif r.rank == 3 %}3rd{% else %}{{ r.rank }}th{% endif %}</span> of {{ r.field }}</td>
+          <td><a class="btn-link" href="{{ r.code }}" aria-label="Code for {{ r.challenge }}"><i class="fab fa-github" aria-hidden="true"></i><span class="btn-text"> Code</span></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% for g in a.groups %}
+{% if g.compact %}
+<section class="section" aria-labelledby="{{ g.id }}">
+  <div class="section__head"><h2 class="section__title" id="{{ g.id }}">{{ g.title }}</h2></div>
+  <ul class="award-list">
+    {% for it in g.items %}
+    <li class="award-list__item">
+      <div><span class="award-list__title">{{ it.title }}</span><span class="award-list__org">{{ it.org }}</span></div>
+      <span class="award-list__year">{{ it.years | join: ", " }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endfor %}
+
+<section class="section" aria-labelledby="certs">
+  <div class="section__head"><h2 class="section__title" id="certs">Certifications</h2></div>
+  <ul class="tags">{% for c in a.certifications %}<li class="tag">{{ c }}</li>{% endfor %}</ul>
+</section>

@@ -1,0 +1,20 @@
+<ol class="pubs">
+  {% for p in site.data.publications %}
+  {% if include.selected and p.selected != true %}{% continue %}{% endif %}
+  <li class="pub">
+    <div class="pub__badge" aria-hidden="true">{{ p.venue_short }}<small>{{ p.year }}</small></div>
+    <div>
+      <h3 class="pub__title">{{ p.title }}</h3>
+      <p class="pub__authors">{{ p.authors }}</p>
+      <p class="pub__venue"><em>{{ p.venue }}</em>, {{ p.details }}, {{ p.year }}.</p>
+      {% if include.summaries %}
+      <details class="pub__more"><summary>Summary</summary><p class="pub__summary">{{ p.summary }}</p></details>
+      {% endif %}
+      <ul class="btn-row">
+        <li><a class="btn-link" href="https://doi.org/{{ p.doi }}"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> DOI</a></li>
+        {% if p.code %}<li><a class="btn-link" href="{{ p.code }}"><i class="fab fa-github" aria-hidden="true"></i> Code</a></li>{% endif %}
+      </ul>
+    </div>
+  </li>
+  {% endfor %}
+</ol>

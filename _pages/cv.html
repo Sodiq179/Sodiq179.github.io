@@ -1,0 +1,19 @@
+---
+permalink: /cv/
+title: "Curriculum vitae"
+kicker: "CV"
+lede: "My full academic CV, three pages. It covers education, publications, research, awards, teaching, industry experience and skills."
+description: "Curriculum vitae of Sodiq Babawale."
+redirect_from:
+  - /resume/
+---
+{% include base_path %}
+
+<div class="cv-actions">
+  <a class="btn-primary" href="{{ base_path }}{{ site.author.cv }}" download><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download PDF</a>
+  <a class="btn-link" href="{{ base_path }}{{ site.author.cv }}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Open in a new tab</a>
+</div>
+
+<object class="cv-frame" data="{{ base_path }}{{ site.author.cv }}#view=FitH" type="application/pdf" aria-label="Sodiq Babawale CV (PDF)">
+  <div class="callout"><p>Your browser can't show the PDF here. <a href="{{ base_path }}{{ site.author.cv }}">Download the CV</a> instead.</p></div>
+</object>

@@ -1,0 +1,31 @@
+---
+permalink: /projects/
+title: "Projects"
+kicker: "Projects"
+lede: "Selected applied work in optimization, forecasting and decision support. Code for each project is on GitHub."
+description: "Selected optimization, forecasting and machine learning projects by Sodiq Babawale."
+redirect_from:
+  - /portfolio/
+---
+{% include base_path %}
+
+<section class="section">
+  <ul class="cards">
+    {% for p in site.data.projects %}
+    <li class="card">
+      <p class="card__kicker">{{ p.context }}</p>
+      <h3 class="card__title">{{ p.title }}</h3>
+      <span class="card__result{% if p.result contains '1st' %} card__result--win{% endif %}">{{ p.result }}</span>
+      <p class="card__text">{{ p.text }}</p>
+      <div class="card__foot">
+        <ul class="tags">{% for t in p.tags %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
+        {% if p.code %}<a class="btn-link" href="{{ p.code }}"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<div class="callout">
+  <p>More competition solutions, from tourism classification to solar-panel detection, are on <a href="https://github.com/{{ site.author.github }}">GitHub</a> and my <a href="{{ site.author.zindi }}">Zindi profile</a>. Two full paper reproductions are on the <a href="{{ base_path }}/research/#reproductions">Research</a> page.</p>
+</div>

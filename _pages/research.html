@@ -1,0 +1,73 @@
+---
+permalink: /research/
+title: "Research"
+kicker: "Research"
+lede: "Peer-reviewed papers, research internships, and careful reproductions of recent operations research papers."
+description: "Publications, research experience and paper reproductions by Sodiq Babawale."
+redirect_from:
+  - /publications/
+---
+{% include base_path %}
+
+<section class="section" aria-labelledby="publications">
+  <div class="section__head">
+    <h2 class="section__title" id="publications">Publications</h2>
+    <a class="section__more" href="{{ site.author.googlescholar }}">Google Scholar <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </div>
+  {% include pub-list.html summaries=true %}
+</section>
+
+<section class="section" aria-labelledby="reproductions">
+  <div class="section__head"><h2 class="section__title" id="reproductions">Paper reproductions and extensions</h2></div>
+  <p class="section__intro">Rebuilding published results from scratch, then pushing the method somewhere the authors didn't take it.</p>
+  <ul class="cards cards--one">
+    <li class="card">
+      <p class="card__kicker">2026 · with M. S. Jamal · reproduction of van der Haar, Wellens, Boute &amp; Basten (2024), <em>European Journal of Operational Research</em></p>
+      <h3 class="card__title">Supervised learning for integrated forecasting and lost-sales inventory control</h3>
+      <span class="card__result">Optimality gap cut from up to 27% to 0.69% under stochastic lead times</span>
+      <div class="card__text">
+        <ul>
+          <li>Reproduced the lost-sales results at the paper's full training budget. Exact value iteration matched all 32 optimal costs on the Zipkin (2008) testbed, and the cost-trained LightGBM policy, using a custom gradient objective, came within 0.05 of the published cost in 28 of 32 instances.</li>
+          <li>Rebuilt the paper's confidential real-data study on the public M5 Walmart data. The learned policy was the cheapest of four methods in 11 of 16 settings.</li>
+          <li><strong>Extension:</strong> designed a loss on the realised arrival period for stochastic lead times, cutting the gap to the optimal policy from up to 27% (fixed-lead-time model) to 0.69% on average, the best of all methods tested.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><ul class="tags"><li class="tag">Inventory control</li><li class="tag">Dynamic programming</li><li class="tag">LightGBM</li><li class="tag">M5 data</li></ul></div>
+    </li>
+    <li class="card">
+      <p class="card__kicker">2026 · with M. Sammir · replication of Ruggles et al. (2024), <em>Advances in Applied Energy</em></p>
+      <h3 class="card__title">Planning reliable wind- and solar-based electricity systems as a linear program</h3>
+      <span class="card__result">12 of 13 capacities reproduced within 10% across 5,000+ LPs</span>
+      <div class="card__text">
+        <ul>
+          <li>Implemented the capacity-expansion and dispatch LP in Gurobi over 42 weather years in 4-hour steps (5,000+ LPs) and derived its dual. Reproduced the paper's hard and easy weather years exactly, with cost recovery from dual prices holding to machine precision.</li>
+          <li><strong>Extensions:</strong> pricing lost load in planning lowered tested total cost by up to 26%, and cycling hydrogen storage within each year shrank the store by 27% for 1.3% more cost.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><ul class="tags"><li class="tag">Linear programming</li><li class="tag">Duality</li><li class="tag">Gurobi</li><li class="tag">Energy systems</li></ul></div>
+    </li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="experience">
+  <div class="section__head"><h2 class="section__title" id="experience">Research experience</h2></div>
+  <ul class="entries">
+    <li class="entry">
+      <div class="entry__top"><h3 class="entry__role">Research Intern</h3><span class="entry__date">Feb 2024 – Aug 2024</span></div>
+      <p class="entry__org">Climate Smart Decision Support Systems (CLIMDES), Michigan State University · remote</p>
+      <ul>
+        <li>Built a Unity-based digital twin of a commercial strawberry greenhouse that mirrors its geometry, its 56-node temperature–humidity sensor network and its telemetry streams (MQTT/API).</li>
+        <li>Developed an offline Thompson-sampling (Bayesian bandit) policy that ranks sensors by informativeness across seasons and psychrometric variables, so a smaller sensor subset can represent the full network.</li>
+        <li>Implemented a decision-support interface pairing a 2D dashboard with 3D visualisation of microclimate gradients. Published in <em>AgriEngineering</em> (2025).</li>
+      </ul>
+    </li>
+    <li class="entry">
+      <div class="entry__top"><h3 class="entry__role">Undergraduate Researcher</h3><span class="entry__date">Aug 2023 – Apr 2024</span></div>
+      <p class="entry__org">Department of Industrial and Production Engineering, University of Ibadan</p>
+      <ul>
+        <li>Designed and compared two convolutional neural networks for automated defect detection in cast submersible pump impellers, using a real industrial image dataset.</li>
+        <li>Benchmarked accuracy, precision, recall, F1-score and inference time with paired statistical tests to judge suitability for high-throughput inspection lines. Published in <em>IJAMT</em> (2025).</li>
+      </ul>
+    </li>
+  </ul>
+</section>

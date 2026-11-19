@@ -1,0 +1,24 @@
+- title: "Biorefinery supply chain design"
+  context: "Shell.ai Hackathon for Sustainable and Affordable Energy · 2023 · team of four"
+  result: "Predict-then-optimize pipeline for 2,418 biomass sites"
+  text: "Designed a biomass supply chain for 2,418 harvest sites in Gujarat, India. LightGBM yield forecasts feed a transportation LP from sites to depots and a capacitated p-median MILP from depots to refineries, solved in PuLP."
+  tags: ["MILP", "Facility location", "LightGBM", "PuLP"]
+  code: "https://github.com/Sodiq179/Shell-AI-Sustainable-and-Affordable-Energy-Agricultural-Waste-Challenge"
+- title: "Greenhouse digital twin and sensor selection"
+  context: "Michigan State University, CLIMDES · 2024"
+  result: "Published in AgriEngineering (2025)"
+  text: "A Unity 3D digital twin of a 56-node strawberry greenhouse with live MQTT telemetry, and a Thompson-sampling policy that ranks sensors so a smaller subset can represent the full network."
+  tags: ["Digital twin", "Bayesian bandits", "Unity", "MQTT"]
+  code: "https://github.com/Sodiq179/digital-twin-greenhouse"
+- title: "Landslide identification from Hong Kong terrain data"
+  context: "Zindi · Landslide Prevention and Innovation Challenge"
+  result: "1st of 173"
+  text: "A gradient-boosting ensemble (XGBoost, CatBoost, LightGBM) that identifies landslide locations from terrain features."
+  tags: ["Gradient boosting", "Geospatial", "Ensembles"]
+  code: "https://github.com/Sodiq179/Landslide-Prevention-and-Innovation-Project"
+- title: "Urban air-quality forecasting"
+  context: "Zindi · Trailblazers and Layer.ai challenges"
+  result: "1st of 53 and 4th of 258"
+  text: "Daily PM2.5 forecasting from sensor and weather data, built around careful feature engineering and validation that respects time order."
+  tags: ["Forecasting", "Time series", "Feature engineering"]
+  code: "https://github.com/Sodiq179/Trailblazers-Qualification-Challenge"

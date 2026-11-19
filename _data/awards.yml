@@ -1,0 +1,89 @@
+featured:
+  title: "Huawei ICT Competition 2023–2024, Cloud Track"
+  org: "Huawei Technologies"
+  summary: "Competed for Nigeria in a team of three and led our team's AI work. The competition drew 170,000+ students from 2,000+ institutions worldwide."
+  steps:
+    - stage: "National Final"
+      place: "Nigeria"
+      result: "Top 5 individually"
+      date: "Dec 2023"
+    - stage: "Regional Final"
+      place: "Southern Africa, held in Nigeria"
+      result: "2nd runner-up"
+      date: "2024"
+    - stage: "Global Final"
+      place: "Shenzhen, China"
+      result: "Grand Prize"
+      date: "May 2024"
+      win: true
+
+groups:
+  - id: teaching
+    title: "Teaching"
+    items:
+      - title: "First Prize, Huawei ICT Global Teaching Competition"
+        org: "Huawei Technologies"
+        years: ["2025", "2026"]
+        note: "Awarded twice for hands-on AI teaching to undergraduates at the Huawei ICT Academy, University of Ibadan."
+  - id: research
+    title: "Research and hackathons"
+    items:
+      - title: "1st Place, Deep Learning Indaba 2024 Hackathon"
+        org: "Deep Learning Indaba, Dakar, Senegal"
+        years: ["2024"]
+        note: "Snakes and Sequences: venom peptide sequencing from mass-spectrometry data. 101 participants."
+      - title: "Outstanding Poster Award, Deep Learning Indaba 2024"
+        org: "Deep Learning Indaba, Dakar, Senegal"
+        years: ["2024"]
+        note: "Transformer models for extracting locations from disaster tweets."
+  - id: scholarships
+    title: "Scholarships and selective programmes"
+    compact: true
+    items:
+      - title: "African Computer Vision Summer School (ACVSS), funded participant"
+        org: "AIMS Kigali, Rwanda · 25 selected from 300+"
+        years: ["2025"]
+      - title: "i-Scholar Initiative Scholarship"
+        org: "For academic excellence"
+        years: ["2025"]
+      - title: "Deep Learning Indaba, funded participant"
+        org: "Dakar, Senegal · selected by competitive application"
+        years: ["2024"]
+      - title: "Federal Government of Nigeria Scholarship"
+        org: "For academic excellence"
+        years: ["2023"]
+      - title: "Nigeria Higher Education Foundation Scholarship"
+        org: "For academic excellence"
+        years: ["2023"]
+  - id: academic
+    title: "Academic distinctions"
+    compact: true
+    items:
+      - title: "Best Graduating Student"
+        org: "Department of Industrial and Production Engineering, University of Ibadan · ranked 1st of 48"
+      - title: "Dean's Award for Academic Excellence, five sessions"
+        org: "Faculty of Technology, University of Ibadan"
+
+zindi:
+  summary: "Top 1% of 70,000+ data scientists on Zindi, Africa's largest data science competition platform, with 45 medals from 2021 to 2025."
+  results:
+    - challenge: "Landslide Prevention and Innovation Challenge"
+      topic: "Landslide identification from Hong Kong terrain data"
+      rank: 1
+      field: 173
+      code: "https://github.com/Sodiq179/Landslide-Prevention-and-Innovation-Project"
+    - challenge: "Trailblazers Qualification Challenge"
+      topic: "Daily PM2.5 air-quality forecasting"
+      rank: 1
+      field: 53
+      code: "https://github.com/Sodiq179/Trailblazers-Qualification-Challenge"
+    - challenge: "Layer.ai Air Quality Prediction Challenge"
+      topic: "PM2.5 forecasting for Ugandan cities"
+      rank: 4
+      field: 258
+      code: "https://github.com/Sodiq179/Layer.ai-Air-Quality-Prediction-Challenge"
+
+certifications:
+  - "HCIP-AI Developer (Huawei Certified ICT Professional)"
+  - "HCIA-AI (Huawei Certified ICT Associate)"
+  - "Huawei Certified Academy Instructor, AI"

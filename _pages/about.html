@@ -1,0 +1,68 @@
+---
+permalink: /
+title: "About"
+hide_title: true
+body_class: home
+description: "Sodiq Babawale is an industrial engineer and data scientist working on optimization, data analytics and machine learning for logistics and supply chains."
+redirect_from:
+  - /about/
+  - /about.html
+---
+{% include base_path %}
+
+<header class="page__header home__header">
+  <p class="page__kicker">About</p>
+  <h1 class="page__title">Industrial engineer and data scientist</h1>
+  <p class="page__lede">Optimization, data analytics and machine learning for logistics and supply chains.</p>
+</header>
+
+<section class="section bio" aria-label="Biography">
+  <p>I am an industrial engineer and data scientist working at the intersection of optimization, data analytics and machine learning, with a focus on logistics and supply chains. I hold a B.Sc. in Industrial and Production Engineering from the University of Ibadan, where I graduated with First Class Honours, ranked first in my department.</p>
+  <p>My work centres on decision-making under uncertainty: bringing forecasts into optimization models, designing supply chain networks, and building simulation and digital-twin tools for decision support. I have carried out research with the Climate Smart Decision Support Systems group at Michigan State University and at the University of Ibadan, with publications in <em>The International Journal of Advanced Manufacturing Technology</em> and <em>AgriEngineering</em>.</p>
+  <p>Alongside research, I have worked in AI engineering at Nethermind and in network deployment at Huawei, and I teach applied machine learning through the Huawei ICT Academy. My work has been recognised with the Grand Prize at the Huawei ICT Competition Global Final and with First Prize in the Huawei ICT Global Teaching Competition in 2025 and 2026.</p>
+</section>
+
+<section class="section" aria-labelledby="highlights">
+  <div class="section__head"><h2 class="section__title" id="highlights">Highlights</h2></div>
+  <ul class="stats" role="list">
+    <li class="stat"><span class="stat__value">2</span><span class="stat__label">journal papers, in <em>IJAMT</em> and <em>AgriEngineering</em></span></li>
+    <li class="stat"><span class="stat__value">Grand Prize</span><span class="stat__label">Huawei ICT Competition Global Final, 2024</span></li>
+    <li class="stat"><span class="stat__value">1st of 48</span><span class="stat__label">First Class Honours, CGPA 3.86/4.00</span></li>
+    <li class="stat"><span class="stat__value">Top 1%</span><span class="stat__label">on Zindi, 45 medals, 70,000+ users</span></li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="interests">
+  <div class="section__head"><h2 class="section__title" id="interests">Research interests</h2></div>
+  <ul class="interests">
+    <li class="interest"><span class="interest__icon" aria-hidden="true"><i class="fas fa-diagram-project"></i></span><span class="interest__body"><span class="interest__title">Optimization under uncertainty</span><span class="interest__text">Stochastic and robust models for decisions made before demand, lead times or supply are known.</span></span></li>
+    <li class="interest"><span class="interest__icon" aria-hidden="true"><i class="fas fa-brain"></i></span><span class="interest__body"><span class="interest__title">Learning for decision-making</span><span class="interest__text">Predict-then-optimize and decision-focused learning, where forecasts are judged by the decisions they lead to.</span></span></li>
+    <li class="interest"><span class="interest__icon" aria-hidden="true"><i class="fas fa-truck-fast"></i></span><span class="interest__body"><span class="interest__title">Logistics and supply chains</span><span class="interest__text">Network design, inventory control and coordination in urban last-mile logistics.</span></span></li>
+    <li class="interest"><span class="interest__icon" aria-hidden="true"><i class="fas fa-cubes"></i></span><span class="interest__body"><span class="interest__title">Simulation and digital twins</span><span class="interest__text">Decision support that tests a policy in a faithful model before it meets the real system.</span></span></li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="education">
+  <div class="section__head"><h2 class="section__title" id="education">Education</h2></div>
+  <div class="edu">
+    <div class="edu__icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+    <div>
+      <p class="edu__school">University of Ibadan, Nigeria</p>
+      <p class="edu__degree">B.Sc. Industrial and Production Engineering, First Class Honours</p>
+      <p class="edu__facts">CGPA 3.86/4.00 · ranked 1st of 48 · Best Graduating Student · Dean's Honours List in five sessions. Thesis on computer vision for quality inspection in casting, published in <em>IJAMT</em>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="news">
+  <div class="section__head"><h2 class="section__title" id="news">News</h2></div>
+  {% include news-list.html limit=6 %}
+</section>
+
+<section class="section" aria-labelledby="pubs">
+  <div class="section__head">
+    <h2 class="section__title" id="pubs">Selected publications</h2>
+    <a class="section__more" href="{{ base_path }}/research/">All research <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  {% include pub-list.html selected=true %}
+</section>

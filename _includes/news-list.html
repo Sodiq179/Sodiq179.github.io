@@ -1,0 +1,9 @@
+{% assign limit = include.limit | default: 100 %}
+<ul class="news">
+  {% for n in site.data.news limit: limit %}
+  <li class="news__item">
+    <span class="news__date">{{ n.date }}</span>
+    <div class="news__text">{{ n.text | markdownify }}</div>
+  </li>
+  {% endfor %}
+</ul>
