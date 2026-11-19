@@ -1,0 +1,21 @@
+<svg class="ill" viewBox="0 0 360 200" role="img" aria-label="Contour plot of an objective with uncertain scenarios and a robust optimum">
+  <rect class="ill-bg" x="0" y="0" width="360" height="200" rx="0"/>
+  <g class="ill-grid"><path d="M40 30 V170 H330"/></g>
+  <g class="ill-line ill-thin">
+    <ellipse cx="190" cy="100" rx="125" ry="62" transform="rotate(-12 190 100)"/>
+    <ellipse cx="190" cy="100" rx="92" ry="44" transform="rotate(-12 190 100)"/>
+    <ellipse cx="190" cy="100" rx="60" ry="28" transform="rotate(-12 190 100)"/>
+    <ellipse cx="190" cy="100" rx="28" ry="12" transform="rotate(-12 190 100)"/>
+  </g>
+  <g class="ill-mute-fill">
+    <circle cx="150" cy="82" r="3.5"/><circle cx="232" cy="74" r="3.5"/><circle cx="214" cy="128" r="3.5"/>
+    <circle cx="164" cy="122" r="3.5"/><circle cx="246" cy="108" r="3.5"/><circle cx="136" cy="104" r="3.5"/>
+    <circle cx="200" cy="64" r="3.5"/>
+  </g>
+  <path class="ill-line ill-dash" d="M120 98 C130 50 240 40 262 88 C280 128 220 150 170 140 C130 132 116 120 120 98 Z"/>
+  <path class="ill-hi-line" d="M70 150 L118 128 L152 112 L188 101"/>
+  <circle class="ill-hi" cx="190" cy="100" r="7"/>
+  <circle class="ill-hi-ring" cx="190" cy="100" r="13"/>
+  <text class="ill-label" x="40" y="22">scenarios ξ₁ … ξₙ</text>
+  <text class="ill-label" x="230" y="186">robust optimum x*</text>
+</svg>

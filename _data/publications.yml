@@ -6,6 +6,7 @@
   year: 2025
   doi: "10.1007/s00170-025-16665-7"
   summary: "Designs and compares two convolutional neural networks for automated defect detection in cast submersible pump impellers on a real industrial image dataset, benchmarking accuracy, precision, recall, F1-score and inference time with paired statistical tests to judge suitability for high-throughput inspection lines."
+  tldr: "Two CNNs benchmarked for automated defect detection in cast pump impellers, with paired statistical tests for use on high-throughput inspection lines."
   selected: true
 - title: "A digital twin framework for sensor selection and microclimate monitoring in greenhouses"
   authors: "O. Akintan, <strong>S. Babawale</strong>, A. Olomo, R. Adeyemo, O. Opadotun, J. T. Ajayi, P. C. Mba, J. N. Njoku, A. Chesang, A. Zahid, D. D. Uyeh"
@@ -16,4 +17,5 @@
   doi: "10.3390/agriengineering7100315"
   code: "https://github.com/Sodiq179/digital-twin-greenhouse"
   summary: "A Unity-based digital twin of a commercial strawberry greenhouse that mirrors its 56-node temperature–humidity sensor network, with an offline Thompson-sampling (Bayesian bandit) policy that ranks sensors by informativeness so that a smaller subset can represent the full network."
+  tldr: "A Unity digital twin of a 56-node greenhouse sensor network, with a Thompson-sampling policy that finds a smaller sensor subset able to represent the whole network."
   selected: true

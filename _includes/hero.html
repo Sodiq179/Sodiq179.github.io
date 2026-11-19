@@ -1,0 +1,44 @@
+{% include base_path %}
+{% assign author = site.author %}
+{% assign email_parts = author.email | split: "@" %}
+<header class="band hero" aria-labelledby="name">
+  <svg class="hero__net" viewBox="0 0 600 420" aria-hidden="true" focusable="false">
+    <g class="hero__edges">
+      <path d="M40 330 L150 250 L270 300 L380 190 L520 240 M150 250 L210 120 L380 190 M210 120 L330 60 L470 90 L520 240 M270 300 L330 390 L470 350 L520 240 M380 190 L470 90 M40 330 L120 400 L330 390 M40 150 L210 120 M40 150 L150 250"/>
+    </g>
+    <g class="hero__route"><path d="M40 330 L150 250 L210 120 L330 60 L470 90"/></g>
+    <g class="hero__nodes">
+      <circle cx="40" cy="330" r="5"/><circle cx="150" cy="250" r="4"/><circle cx="270" cy="300" r="4"/>
+      <circle cx="380" cy="190" r="6"/><circle cx="520" cy="240" r="4"/><circle cx="210" cy="120" r="4"/>
+      <circle cx="330" cy="60" r="4"/><circle cx="470" cy="90" r="5"/><circle cx="330" cy="390" r="4"/>
+      <circle cx="470" cy="350" r="4"/><circle cx="120" cy="400" r="3"/><circle cx="40" cy="150" r="3"/>
+    </g>
+  </svg>
+  <div class="band__inner hero__inner">
+    <div class="hero__text">
+      <p class="band__kicker">Industrial Engineering · Data Science</p>
+      <h1 class="hero__name" id="name">Sodiq Babawale</h1>
+      <p class="hero__focus">Optimization and machine learning for <em>smarter</em> and more <em>resilient</em> supply chains</p>
+      <ul class="hero__tags" aria-label="Research areas">
+        <li>Optimization</li><li>Machine learning</li><li>Logistics</li><li>Digital twins</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="hero__cv" href="{{ base_path }}{{ author.cv }}"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
+        <ul class="hero__links">
+          <li><a href="mailto:{{ author.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
+          <li><a href="{{ author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Scholar</span></a></li>
+          <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+          <li><a href="{{ author.zindi }}"><i class="fas fa-trophy" aria-hidden="true"></i><span>Zindi</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <figure class="hero__figure">
+      <picture>
+        <source srcset="{{ base_path }}/images/sodiq-babawale.webp" type="image/webp">
+        <img src="{{ base_path }}/images/sodiq-babawale.jpg" alt="Portrait of Sodiq Babawale" width="480" height="480" fetchpriority="high">
+      </picture>
+      <figcaption><strong>Sodiq Babawale</strong><span>B.Sc. Industrial and Production Engineering, University of Ibadan</span></figcaption>
+    </figure>
+  </div>
+</header>

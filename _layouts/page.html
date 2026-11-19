@@ -2,18 +2,18 @@
 layout: default
 ---
 {% include base_path %}
+{% unless page.hide_title %}
+<header class="band band--page">
+  <div class="band__inner">
+    {% if page.kicker %}<p class="band__kicker">{{ page.kicker }}</p>{% endif %}
+    <h1 class="band__title">{{ page.title }}</h1>
+    {% if page.lede %}<p class="band__lede">{{ page.lede }}</p>{% endif %}
+  </div>
+</header>
+{% endunless %}
+{% if page.hero %}{% include hero.html %}{% endif %}
 <div id="main" role="main">
-  {% include sidebar.html %}
   <article class="page">
-    {% unless page.hide_title %}
-    <header class="page__header">
-      {% if page.kicker %}<p class="page__kicker">{{ page.kicker }}</p>{% endif %}
-      <h1 class="page__title">{{ page.title }}</h1>
-      {% if page.lede %}<p class="page__lede">{{ page.lede }}</p>{% endif %}
-    </header>
-    {% endunless %}
-    <div class="page__content">
-      {{ content }}
-    </div>
+    <div class="page__content">{{ content }}</div>
   </article>
 </div>

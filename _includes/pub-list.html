@@ -7,6 +7,7 @@
       <h3 class="pub__title">{{ p.title }}</h3>
       <p class="pub__authors">{{ p.authors }}</p>
       <p class="pub__venue"><em>{{ p.venue }}</em>, {{ p.details }}, {{ p.year }}.</p>
+      {% if include.tldr and p.tldr %}<p class="pub__summary">{{ p.tldr }}</p>{% endif %}
       {% if include.summaries %}
       <details class="pub__more"><summary>Summary</summary><p class="pub__summary">{{ p.summary }}</p></details>
       {% endif %}

@@ -1,13 +1,9 @@
-# Order of the links in the top menu
+# Order of the links in the top menu (About is always first)
 main:
   - title: "Research"
     url: /research/
-  - title: "Projects"
-    url: /projects/
   - title: "Awards"
     url: /awards/
-  - title: "Teaching"
-    url: /teaching/
   - title: "Experience"
     url: /experience/
   - title: "CV"

@@ -1,8 +1,21 @@
 {% include base_path %}
+{% assign author = site.author %}
+<div class="foot">
+  <div class="foot__id">
+    <p class="foot__name">Sodiq Babawale</p>
+    <p class="foot__line">Optimization, data analytics and machine learning for logistics and supply chains</p>
+    <p class="foot__line foot__muted">{{ author.location }}</p>
+  </div>
+  <ul class="foot__links">
+    <li><a href="mailto:{{ author.email }}">Email <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ author.googlescholar }}">Google Scholar <span aria-hidden="true">↗</span></a></li>
+    <li><a href="https://github.com/{{ author.github }}">GitHub <span aria-hidden="true">↗</span></a></li>
+    <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ author.zindi }}">Zindi <span aria-hidden="true">↗</span></a></li>
+  </ul>
+</div>
 <div class="page__footer-copyright">
   <span>&copy; {{ site.time | date: '%Y' }} Sodiq Babawale</span>
   <span class="dot" aria-hidden="true">·</span>
   <span>Last updated {{ site.time | date: '%B %Y' }}</span>
-  <span class="dot" aria-hidden="true">·</span>
-  <span>Built with <a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a></span>
 </div>

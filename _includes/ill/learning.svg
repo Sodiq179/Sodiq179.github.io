@@ -1,0 +1,23 @@
+<svg class="ill" viewBox="0 0 360 200" role="img" aria-label="Forecasting model feeding an optimization decision">
+  <rect class="ill-bg" x="0" y="0" width="360" height="200"/>
+  <g class="ill-line ill-thin">
+    <path d="M28 150 L28 60 M28 150 L104 150"/>
+    <path d="M32 132 L46 120 L58 126 L72 98 L86 104 L100 78"/>
+  </g>
+  <path class="ill-line ill-dash" d="M86 104 L100 78 L112 70"/>
+  <text class="ill-label" x="28" y="172">demand forecast</text>
+  <g class="ill-line ill-thin">
+    <path d="M150 64 L190 52 M150 64 L190 100 M150 64 L190 148 M150 100 L190 52 M150 100 L190 100 M150 100 L190 148 M150 136 L190 52 M150 136 L190 100 M150 136 L190 148 M190 52 L228 100 M190 100 L228 100 M190 148 L228 100"/>
+  </g>
+  <g class="ill-node"><circle cx="150" cy="64" r="7"/><circle cx="150" cy="100" r="7"/><circle cx="150" cy="136" r="7"/><circle cx="190" cy="52" r="7"/><circle cx="190" cy="100" r="7"/><circle cx="190" cy="148" r="7"/></g>
+  <circle class="ill-hi" cx="228" cy="100" r="8"/>
+  <path class="ill-arrow" d="M118 100 H136 M130 94 L136 100 L130 106"/>
+  <path class="ill-arrow" d="M242 100 H262 M256 94 L262 100 L256 106"/>
+  <rect class="ill-card" x="272" y="52" width="72" height="96" rx="8"/>
+  <g class="ill-line ill-thin"><path d="M284 72 H332 M284 88 H320 M284 104 H328"/></g>
+  <path class="ill-hi-line" d="M284 124 L298 134 L330 116"/>
+  <text class="ill-label" x="150" y="182">learn</text>
+  <text class="ill-label" x="272" y="172">decide</text>
+  <path class="ill-hi-line ill-dash" d="M308 44 C260 22 120 22 70 52"/>
+  <text class="ill-label" x="128" y="16">trained on decision quality</text>
+</svg>

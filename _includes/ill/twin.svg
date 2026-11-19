@@ -1,0 +1,17 @@
+<svg class="ill" viewBox="0 0 360 200" role="img" aria-label="A physical greenhouse and its digital twin exchanging data">
+  <rect class="ill-bg" x="0" y="0" width="360" height="200"/>
+  <g class="ill-card"><path d="M30 150 V96 L80 64 L130 96 V150 Z"/></g>
+  <g class="ill-line ill-thin"><path d="M80 64 V150 M30 118 H130 M55 80 V150 M105 80 V150"/></g>
+  <g class="ill-leaf"><path d="M50 150 C50 136 60 132 62 128 C64 138 58 146 50 150 Z"/><path d="M92 150 C92 134 104 130 106 124 C108 136 100 146 92 150 Z"/></g>
+  <text class="ill-label" x="40" y="176">physical system</text>
+  <g class="ill-line ill-dash"><path d="M230 150 V96 L280 64 L330 96 V150 Z"/></g>
+  <g class="ill-line ill-thin ill-faint"><path d="M280 64 V150 M230 118 H330 M255 80 V150 M305 80 V150"/></g>
+  <g class="ill-node"><circle cx="230" cy="96" r="4"/><circle cx="280" cy="64" r="4"/><circle cx="330" cy="96" r="4"/><circle cx="230" cy="150" r="4"/><circle cx="330" cy="150" r="4"/><circle cx="280" cy="118" r="4"/></g>
+  <text class="ill-label" x="246" y="176">digital twin</text>
+  <path class="ill-arrow" d="M148 96 H212 M204 89 L212 96 L204 103"/>
+  <path class="ill-hi-line" d="M212 124 H148 M156 117 L148 124 L156 131"/>
+  <text class="ill-label" x="152" y="86">sensor data</text>
+  <text class="ill-label" x="150" y="146">best policy</text>
+  <g class="ill-hi-line ill-thin"><path d="M250 40 L262 30 L274 36 L290 20 L306 26"/></g>
+  <text class="ill-label" x="236" y="16">what-if runs</text>
+</svg>
