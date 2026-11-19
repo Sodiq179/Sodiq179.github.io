@@ -26,27 +26,35 @@ redirect_from:
     <li class="card">
       <p class="card__kicker">2026 · with M. S. Jamal · reproduction of van der Haar, Wellens, Boute &amp; Basten (2024), <em>European Journal of Operational Research</em></p>
       <h3 class="card__title">Supervised learning for integrated forecasting and lost-sales inventory control</h3>
-      <span class="card__result">Optimality gap cut from up to 27% to 0.69% under stochastic lead times</span>
+      <span class="card__result">Average gap to optimal cut from 3.89% to 0.69% under stochastic lead times</span>
+      <figure class="card__fig">
+        <a href="{{ base_path }}/images/research/inventory-gaps.png"><picture><source srcset="{{ base_path }}/images/research/inventory-gaps.webp" type="image/webp"><img src="{{ base_path }}/images/research/inventory-gaps.png" alt="Cost above the exact optimum for five inventory policies under four lead-time scenarios" loading="lazy" width="1600" height="411"></picture></a>
+        <figcaption>Cost above the exact optimum on the test run. The fixed-lead-time model (green) loses up to 27% when orders arrive in sequence with high variance; the arrival-period loss (red) stays close to optimal in every scenario.</figcaption>
+      </figure>
       <div class="card__text">
         <ul>
           <li>Reproduced the lost-sales results at the paper's full training budget. Exact value iteration matched all 32 optimal costs on the Zipkin (2008) testbed, and the cost-trained LightGBM policy, using a custom gradient objective, came within 0.05 of the published cost in 28 of 32 instances.</li>
           <li>Rebuilt the paper's confidential real-data study on the public M5 Walmart data. The learned policy was the cheapest of four methods in 11 of 16 settings.</li>
-          <li><strong>Extension:</strong> designed a loss on the realised arrival period for stochastic lead times, cutting the gap to the optimal policy from up to 27% (fixed-lead-time model) to 0.69% on average, the best of all methods tested.</li>
+          <li><strong>Extension:</strong> designed a loss on the realised arrival period for stochastic lead times, cutting the average gap to the optimal policy from 3.89% (fixed-lead-time model) to 0.69%, and the worst case from 27% to 1.39%. It was the best of all methods tested.</li>
         </ul>
       </div>
-      <div class="card__foot"><ul class="tags"><li class="tag">Inventory control</li><li class="tag">Dynamic programming</li><li class="tag">LightGBM</li><li class="tag">M5 data</li></ul></div>
+      <div class="card__foot"><ul class="tags"><li class="tag">Inventory control</li><li class="tag">Dynamic programming</li><li class="tag">LightGBM</li><li class="tag">M5 data</li></ul><div class="card__links"><a class="btn-link" href="https://github.com/Sodiq179/asl-lostsales-inventory"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a></div></div>
     </li>
     <li class="card">
       <p class="card__kicker">2026 · with M. Sammir · replication of Ruggles et al. (2024), <em>Advances in Applied Energy</em></p>
       <h3 class="card__title">Planning reliable wind- and solar-based electricity systems as a linear program</h3>
       <span class="card__result">12 of 13 capacities reproduced within 10% across 5,000+ LPs</span>
+      <figure class="card__fig">
+        <a href="{{ base_path }}/images/research/lp-capacities.png"><picture><source srcset="{{ base_path }}/images/research/lp-capacities.webp" type="image/webp"><img src="{{ base_path }}/images/research/lp-capacities.png" alt="Reproduced capacities for 42 single-year systems compared with the published values" loading="lazy" width="1516" height="573"></picture></a>
+        <figcaption>Capacities of the 42 single-year systems (dots) and their mean (bar), against the published values (dashed).</figcaption>
+      </figure>
       <div class="card__text">
         <ul>
           <li>Implemented the capacity-expansion and dispatch LP in Gurobi over 42 weather years in 4-hour steps (5,000+ LPs) and derived its dual. Reproduced the paper's hard and easy weather years exactly, with cost recovery from dual prices holding to machine precision.</li>
           <li><strong>Extensions:</strong> pricing lost load in planning lowered tested total cost by up to 26%, and cycling hydrogen storage within each year shrank the store by 27% for 1.3% more cost.</li>
         </ul>
       </div>
-      <div class="card__foot"><ul class="tags"><li class="tag">Linear programming</li><li class="tag">Duality</li><li class="tag">Gurobi</li><li class="tag">Energy systems</li></ul></div>
+      <div class="card__foot"><ul class="tags"><li class="tag">Linear programming</li><li class="tag">Duality</li><li class="tag">Gurobi</li><li class="tag">Energy systems</li></ul><div class="card__links"><a class="btn-link" href="https://github.com/Sodiq179/weather-year-reliability-lp"><i class="fab fa-github" aria-hidden="true"></i> Code and report</a></div></div>
     </li>
   </ul>
 </section>

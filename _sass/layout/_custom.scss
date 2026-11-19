@@ -1194,3 +1194,12 @@ html[data-theme="dark"] {
   .hero__figure img { height: 290px; }
 }
 .hero__tags li { letter-spacing: 0.13em; }
+
+/* Result figures on research cards (plots keep a white ground in both themes) */
+.card__fig { margin: 4px 0 16px; }
+.card__fig a { display: block; border-bottom: 0 !important; }
+.card__fig img { display: block; width: 100%; height: auto; background: #fff; padding: 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.card__fig figcaption { margin-top: 8px; font-family: var(--font-sans); font-size: 0.8125rem; line-height: 1.5; color: var(--ink-3); }
+.card__links { display: flex; gap: 8px; }
+.callout--now { margin: 0 0 48px; border-left: 3px solid var(--gold); }
+.callout--now strong { color: var(--ink); }
